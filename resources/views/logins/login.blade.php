@@ -1,6 +1,5 @@
-@extends('layouts.default')
+@extends('layouts.app')
 @section('title', '登录')
-
 @section('content')
 <div class="offset-md-2 col-md-8">
   <div class="card ">
@@ -8,9 +7,10 @@
       <h5>登录</h5>
     </div>
     <div class="card-body">
+      
       @include('shared._errors')
 
-      <form method="POST" action="{{ route('login') }}">
+      <form method="POST" action="{{route('check')}}">
           {{ csrf_field() }}
 
           <div class="form-group">
@@ -25,7 +25,6 @@
 
           <button type="submit" class="btn btn-primary">登录</button>
       </form>
-
       <hr>
     </div>
   </div>

@@ -11,16 +11,17 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 //显示首页
 Route::get('/', 'PagesController@root')->name('root');
 
+//登录界面
+Route::get('/login', 'LoginController@forwardLoginView')->name('login');
 
-Route::resource('users', 'UsersController');
+//验证登录
+Route::post('/check/login', 'LoginController@checkLogin')->name('check');
 
-Route::get('login', 'SessionsController@create')->name('login');
-Route::post('login', 'SessionsController@store')->name('login');
-Route::delete('logout', 'SessionsController@destroy')->name('logout');
+Route::get('/info/show/{user}', 'UserController@showUserInfo')->name('show');
+
+Route::delete('/logout', 'UserController@userLogout')->name('logout');
+
+Route::get('/show/questions', 'QuestionsController@forwardQuestionsView')->name('questions');
