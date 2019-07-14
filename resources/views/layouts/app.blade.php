@@ -2,6 +2,7 @@
 <html lang="{{ app()->getLocale() }}">
 
 <head>
+  <title>山东理工大学迎新系统</title>
   <script type="text/javascript" src="/js/app.js"></script>
   <script type="text/javascript" src="/js/shuffling.js"></script>
   <link href="/css/shuffling.css" rel="stylesheet">
